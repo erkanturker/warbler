@@ -234,15 +234,9 @@ def profile():
             return redirect(f"/users/{user.id}")
         
         flash("Access unauthorized.", "danger")
-        return redirect("/")
-        
-
-
-
-    
+        return redirect("/")    
 
     return render_template("/users/edit.html",form=form)
-
 
 @app.route('/users/delete', methods=["POST"])
 def delete_user():
