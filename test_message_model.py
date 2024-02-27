@@ -59,13 +59,3 @@ class MessageModelTestCase(TestCase):
 
 
 
-    
-
-
-
-
-
-
-
-
-
