@@ -2,10 +2,14 @@ appnope==0.1.4
 asttokens==2.4.1
 backcall==0.2.0
 bcrypt==4.1.2
+beautifulsoup4==4.12.3
 blinker==1.7.0
+bs4==0.0.2
 cffi==1.16.0
 click==8.1.7
 decorator==5.1.1
+dnspython==2.6.1
+email-validator==2.1.0.post1
 executing==2.0.1
 Faker==23.2.1
 Flask==3.0.2
@@ -14,6 +18,8 @@ Flask-DebugToolbar==0.14.1
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.1
 greenlet==3.0.3
+gunicorn==21.2.0
+idna==3.6
 ipython==8.22.1
 ipython-genutils==0.2.0
 itsdangerous==2.1.2
@@ -34,6 +40,7 @@ Pygments==2.17.2
 python-dateutil==2.8.2
 simplegeneric==0.8.1
 six==1.16.0
+soupsieve==2.5
 SQLAlchemy==2.0.27
 stack-data==0.6.3
 text-unidecode==1.3
