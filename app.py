@@ -244,12 +244,15 @@ def add_like(msg_id):
     if not g.user:
         flash("Access unauthorized.", "danger")
         return redirect("/")
-    
-    liked_msg= Likes(user_id= g.user.id,message_id=msg_id)
-    db.session.add(liked_msg)
+    is_liked = Likes.query.filter_by(message_id=msg_id).first()
+    if is_liked:
+        db.session.delete(is_liked)
+    else:
+        liked_msg= Likes(user_id= g.user.id,message_id=msg_id)
+        db.session.add(liked_msg)
     db.session.commit()
     
-    return f"{msg_id} is liked"
+    return redirect("/")
 
 @app.route('/users/delete', methods=["POST"])
 def delete_user():

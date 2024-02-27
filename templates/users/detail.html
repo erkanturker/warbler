@@ -40,7 +40,7 @@
           </li>
           <li class="stat">
             <p class="small">Likes</p>
-            <h4>TBD</h4>
+            <h4>{{user.likes|length}}</h4>
           </li>
           <div class="ml-auto">
             {% if g.user.id == user.id %}
@@ -76,7 +76,8 @@
     {%endif%}
     <p class="user-location">
       {%if user.location%}
-      <span class="fa fa-map-marker"></span>{{user.location}}{%endif%}
+      <span class="fa fa-map-marker" style="margin-right: 5px"></span
+      >{{user.location}}{%endif%}
     </p>
   </div>
 
