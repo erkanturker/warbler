@@ -4,7 +4,6 @@
 #
 #    python -m unittest test_user_model.py
 
-
 import os
 from unittest import TestCase
 from sqlalchemy.exc import IntegrityError
@@ -18,7 +17,6 @@ from models import db, User, Message, Follows,bcrypt
 
 os.environ['DATABASE_URL'] = "postgresql:///warbler-test"
 
-
 # Now we can import app
 
 from app import app
@@ -26,8 +24,6 @@ from app import app
 # Create our tables (we do this here, so we only create the tables
 # once for all tests --- in each test, we'll delete the data
 # and create fresh new clean test data
-
-
 
 class UserModelTestCase(TestCase):
     """Test views for messages."""
@@ -45,7 +41,6 @@ class UserModelTestCase(TestCase):
 
         # Create the database tables
         db.create_all()
-
 
         User.query.delete()
         Message.query.delete()
@@ -83,7 +78,6 @@ class UserModelTestCase(TestCase):
         # Pop the application context
         self.app_context.pop()
 
-
     def test_user_model(self):
         """Does basic model work?"""
 
@@ -97,7 +91,6 @@ class UserModelTestCase(TestCase):
         '''testing is_following unit test'''
         self.assertFalse(self.u1.is_following(self.u2))
         self.assertFalse(self.u1.is_followed_by(self.u1))
-
 
         # u1 follows u2
         user = Follows(user_being_followed_id=self.u2.id,user_following_id=self.u1.id)
@@ -140,7 +133,6 @@ class UserModelTestCase(TestCase):
             
             db.session.commit()
 
-
     def test_authenticate(self):
         """Test the signup method of the User model."""
 
@@ -156,7 +148,6 @@ class UserModelTestCase(TestCase):
         # If wrong username or password pass validate False
         self.assertFalse(user.authenticate("testSignUp","12312"))
         self.assertFalse(user.authenticate("x","password"))
-
         
         # if password correct check return user 
         self.assertEqual(user,user.authenticate("testSignUp","password"))
